@@ -16,7 +16,8 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 /**
- * Runs crawljax given a certain {@link CrawljaxConfiguration}. Run {@link #call()} to start a
+ * Runs crawljax given a certain {@link CrawljaxConfiguration}. Run
+ * {@link #call()} to start a
  * crawl.
  */
 public class CrawljaxRunner implements Callable<CrawlSession> {
@@ -65,7 +66,8 @@ public class CrawljaxRunner implements Callable<CrawlSession> {
     }
 
     /**
-     * Stops Crawljax. It will try to shutdown gracefully and run the {@link PostCrawlingPlugin}s.
+     * Stops Crawljax. It will try to shutdown gracefully and run the
+     * {@link PostCrawlingPlugin}s.
      */
     public void stop() {
         checkNotNull(controller, "Cannot stop Crawljax if you haven't started it");
@@ -73,7 +75,8 @@ public class CrawljaxRunner implements Callable<CrawlSession> {
     }
 
     /**
-     * @return The {@link ExitStatus} Crawljax stopped or <code>null</code> if it hasn't stopped yet.
+     * @return The {@link ExitStatus} Crawljax stopped or <code>null</code> if it
+     *         hasn't stopped yet.
      */
     public ExitStatus getReason() {
         return reason;

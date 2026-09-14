@@ -83,6 +83,16 @@ public interface EmbeddedBrowser {
     boolean input(Identification identification, String text) throws CrawljaxException;
 
     /**
+     * Sends {@code keys} to the element without clearing it first, so successive keyboard
+     * transitions can append to the current value.
+     *
+     * @param identification the identification.
+     * @param keys           the key sequence to send.
+     * @return true if succeeded.
+     */
+    boolean typeKeys(Identification identification, CharSequence... keys) throws CrawljaxException;
+
+    /**
      * Execute JavaScript in the browser.
      *
      * @param script The script to execute.

@@ -52,10 +52,10 @@ import org.slf4j.LoggerFactory;
  **/
 public class CrawlOverview
         implements OnNewStatePlugin,
-                PreStateCrawlingPlugin,
-                PostCrawlingPlugin,
-                OnFireEventFailedPlugin,
-                PreCrawlingPlugin {
+        PreStateCrawlingPlugin,
+        PostCrawlingPlugin,
+        OnFireEventFailedPlugin,
+        PreCrawlingPlugin {
 
     private static final Logger LOG = LoggerFactory.getLogger(CrawlOverview.class);
 
@@ -192,8 +192,8 @@ public class CrawlOverview
     private CandidateElementPosition findElement(WebElement webElement, CandidateElement element) {
         Point location = webElement.getLocation();
         Dimension size = webElement.getSize();
-        CandidateElementPosition renderedCandidateElement =
-                new CandidateElementPosition(element.getIdentification().getValue(), location, size);
+        CandidateElementPosition renderedCandidateElement = new CandidateElementPosition(
+                element.getIdentification().getValue(), location, size);
         if (location.getY() < 0) {
             LOG.warn("Weird positioning {} for {}", webElement.getLocation(), renderedCandidateElement.getXpath());
         }

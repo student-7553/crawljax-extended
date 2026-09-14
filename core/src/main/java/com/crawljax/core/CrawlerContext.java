@@ -4,6 +4,7 @@ import com.codahale.metrics.MetricRegistry;
 import com.crawljax.browser.EmbeddedBrowser;
 import com.crawljax.core.ExitNotifier.ExitStatus;
 import com.crawljax.core.configuration.CrawljaxConfiguration;
+import com.crawljax.core.model.InferredModel;
 import com.crawljax.core.plugin.Plugin;
 import com.crawljax.core.state.CrawlPath;
 import com.crawljax.core.state.StateMachine;
@@ -66,6 +67,13 @@ public class CrawlerContext {
      */
     public CrawljaxConfiguration getConfig() {
         return config;
+    }
+
+    /**
+     * @return the inferred user-behavior model for this crawl, or {@code null} if none was configured.
+     */
+    public InferredModel getInferredModel() {
+        return config.getInferredModel();
     }
 
     /**

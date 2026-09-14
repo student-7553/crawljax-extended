@@ -98,6 +98,9 @@ public class Identification implements Serializable {
             case partialText:
                 return By.partialLinkText(this.value);
 
+            case css:
+                return By.cssSelector(this.value);
+
             default:
                 return null;
         }
@@ -135,6 +138,7 @@ public class Identification implements Serializable {
         tag,
         text,
         partialText,
-        url
+        url,
+        css
     }
 }

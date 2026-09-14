@@ -37,7 +37,8 @@ public class Eventable extends DefaultEdge implements Serializable {
     /**
      * Default constructor to support saving instances of this class as an XML.
      */
-    public Eventable() {}
+    public Eventable() {
+    }
 
     /**
      * Create a new Eventable for a identification and eventType.

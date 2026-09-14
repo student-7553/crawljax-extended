@@ -1,20 +1,27 @@
 package com.crawljax.cli;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.isEmptyString;
 import static org.hamcrest.Matchers.startsWith;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNull.notNullValue;
+import static org.hamcrest.core.IsNull.nullValue;
 
 import com.crawljax.browser.EmbeddedBrowser.BrowserType;
+import com.crawljax.core.CrawljaxException;
 import com.crawljax.core.configuration.BrowserConfiguration;
 import com.crawljax.core.configuration.CrawlElement;
 import com.crawljax.core.configuration.CrawlRules;
 import com.crawljax.core.configuration.CrawljaxConfiguration;
+import com.crawljax.core.model.InferredModel;
 import com.crawljax.test.util.CaptureSystemStreams;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ObjectArrays;
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Rule;
@@ -165,6 +172,56 @@ public class JarRunnerTest {
         CrawlRules crawlRules = configForArgs("-" + ParameterInterpeter.WAIT_AFTER_EVENT + " 123")
                 .getCrawlRules();
         assertThat(crawlRules.getWaitAfterEvent(), is(123L));
+    }
+
+    @Test
+    public void whenModelSpecifiedItIsLoadedOnConfig() {
+        String modelPath = fixtureModelPath();
+        CrawljaxConfiguration config = configForArgs("-m " + modelPath);
+        InferredModel model = config.getInferredModel();
+        assertThat(model.getStateCount(), is(2));
+        assertThat(model.getTransitionCount(), is(1));
+        assertThat(model.getInitialState().getId(), is("q0"));
+        assertThat(streams.getConsoleOutput(), containsString("Loaded inferred model from " + modelPath));
+        assertThat(
+                streams.getConsoleOutput(),
+                containsString("Crawl will be guided by the model until all reachable states are visited."));
+    }
+
+    @Test
+    public void whenLongModelOptionSpecifiedItIsLoadedOnConfig() {
+        CrawljaxConfiguration config = configForArgs("--model " + fixtureModelPath());
+        assertThat(config.getInferredModel().getInitialState().getId(), is("q0"));
+    }
+
+    @Test
+    public void whenNoModelSpecifiedConfigHasNone() {
+        assertThat(configForArgs("-d 2").getInferredModel(), is(nullValue()));
+    }
+
+    @Test(expected = CrawljaxException.class)
+    public void whenModelFileMissingItFails() {
+        configForArgs("-m does-not-exist.json");
+    }
+
+    private String fixtureModelPath() {
+        URL resource = getClass().getResource("/model/inferred-model.json");
+        assertThat(resource, is(notNullValue()));
+        return new File(resource.getFile()).getAbsolutePath();
+    }
+
+    @Test
+    public void localhostUrlIsAccepted() {
+        String[] args = {"http://localhost:3001/", tmpFolder.getRoot().getPath()};
+        JarRunner runner = new JarRunner(args);
+        assertThat(runner.getConfig().getUrl().toString(), is("http://localhost:3001/"));
+    }
+
+    @Test
+    public void loopbackIpUrlIsAccepted() {
+        String[] args = {"http://127.0.0.1:8080/app", tmpFolder.getRoot().getPath()};
+        JarRunner runner = new JarRunner(args);
+        assertThat(runner.getConfig().getUrl().toString(), is("http://127.0.0.1:8080/app"));
     }
 
     @Test(expected = IllegalArgumentException.class)

@@ -31,6 +31,11 @@ public class CrawlTaskConsumer implements Callable<Void> {
     @Override
     public Void call() {
         try {
+            if (crawler.getContext().getInferredModel() != null) {
+                crawler.crawlInferredModel();
+                exitNotifier.signalCrawlExhausted();
+                return null;
+            }
             while (!Thread.interrupted()) {
                 if (candidates.isEmpty()) {
                     LOG.debug("No consumers active and the cache is empty. Crawl is done. Shutting down...");

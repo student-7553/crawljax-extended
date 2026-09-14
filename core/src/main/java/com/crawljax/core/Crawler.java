@@ -5,6 +5,12 @@ import com.crawljax.condition.browserwaiter.WaitConditionChecker;
 import com.crawljax.core.configuration.CrawlRules;
 import com.crawljax.core.configuration.CrawlScope;
 import com.crawljax.core.configuration.CrawljaxConfiguration;
+import com.crawljax.core.model.InferredModel;
+import com.crawljax.core.model.InferredTransition;
+import com.crawljax.core.model.ModelCoveragePlanner;
+import com.crawljax.core.model.PlannedAction;
+import com.crawljax.core.model.TransitionInputs;
+import com.crawljax.core.model.TypedKey;
 import com.crawljax.core.plugin.Plugins;
 import com.crawljax.core.state.CrawlPath;
 import com.crawljax.core.state.Element;
@@ -53,6 +59,7 @@ import javax.inject.Provider;
 import javax.xml.xpath.XPathExpressionException;
 import org.jheaps.annotations.VisibleForTesting;
 import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
@@ -63,6 +70,7 @@ public class Crawler {
 
     private static final Logger LOG = LoggerFactory.getLogger(Crawler.class);
     private static final int DUPLICATE_EVENT_SEED = 100000;
+    private static final int MAX_TRIES = 3;
     private final AtomicInteger crawlDepth = new AtomicInteger();
     private final int maxDepth;
     private final EmbeddedBrowser browser;
@@ -236,8 +244,7 @@ public class Crawler {
                 CandidateElement elementToReach = toReach.getSourceStateVertex()
                         .getCandidateElement(toReach.getElement().getNode())
                         .get(0);
-                CandidateElement equivalentCandidate =
-                        stateMachine.getCurrentState().getCandidateElement(toReach);
+                CandidateElement equivalentCandidate = stateMachine.getCurrentState().getCandidateElement(toReach);
                 if (equivalentCandidate != null
                         && fragmentManager.areRelated(
                                 elementToReach.getClosestFragment(), equivalentCandidate.getClosestFragment())) {
@@ -500,8 +507,8 @@ public class Crawler {
             if (path != null) {
                 try {
 
-                    ImmutableList<Eventable> followedPath =
-                            ImmutableList.copyOf(follow(CrawlPath.copyOf(path, crawlTask.getId()), crawlTask));
+                    ImmutableList<Eventable> followedPath = ImmutableList
+                            .copyOf(follow(CrawlPath.copyOf(path, crawlTask.getId()), crawlTask));
 
                     LOG.info("Tried to follow v");
                     printCrawlPath(path, true);
@@ -640,8 +647,8 @@ public class Crawler {
             if (!clickable.getSourceStateVertex().equals(currState)) {
 
                 if (avoidDifferentBacktracking
-                        && fragmentManager.cacheStateComparision(clickable.getSourceStateVertex(), currState, true)
-                                == StateComparision.DIFFERENT) {
+                        && fragmentManager.cacheStateComparision(clickable.getSourceStateVertex(), currState,
+                                true) == StateComparision.DIFFERENT) {
                     // TODO: Check if this is called anywhere other than the first event of the path.
                     // Ideally this check should happen after event is fired for every other evernt in the path
                     LOG.info("Avoiding different backtracking -> {} {}", clickable.getSourceStateVertex(), currState);
@@ -772,16 +779,16 @@ public class Crawler {
                     StateVertex newState = stateMachine.getCurrentState();
                     StateVertex expectedState = clickable.getTargetStateVertex();
                     boolean assignDynamic = true;
-                    StateComparision comp =
-                            fragmentManager.cacheStateComparision(newState, expectedState, assignDynamic);
+                    StateComparision comp = fragmentManager.cacheStateComparision(newState, expectedState,
+                            assignDynamic);
 
                     LOG.info(
                             "changed backtracking state {} and  {} are {}",
                             newState.getName(),
                             expectedState.getName(),
                             comp);
-                    StateComparision prevComp =
-                            fragmentManager.cacheStateComparision(clickable.getSourceStateVertex(), currState, true);
+                    StateComparision prevComp = fragmentManager.cacheStateComparision(clickable.getSourceStateVertex(),
+                            currState, true);
                     if (avoidDifferentBacktracking
                             && comp == StateComparision.DIFFERENT
                             && prevComp != StateComparision.DIFFERENT) {
@@ -1063,7 +1070,6 @@ public class Crawler {
             tries.put(input, false);
         }
 
-        int MAX_TRIES = 3;
         for (int i = 0; i < MAX_TRIES; i++) {
             List<FormInput> newTry = getNextPair(tries);
             if (newTry == null || newTry.isEmpty()) {
@@ -1275,8 +1281,8 @@ public class Crawler {
     private void crawlThroughActionsNew() {
         boolean afterBacktrack = true;
         boolean interrupted = Thread.interrupted();
-        CandidateCrawlAction action =
-                candidateActionCache.pollActionOrNull(stateMachine, context.getFragmentManager(), afterBacktrack);
+        CandidateCrawlAction action = candidateActionCache.pollActionOrNull(stateMachine, context.getFragmentManager(),
+                afterBacktrack);
 
         while (action != null && !interrupted) {
             boolean newStateFound = false;
@@ -1448,6 +1454,10 @@ public class Crawler {
     }
 
     private void parseCurrentPageForCandidateElements() {
+        if (isModelGuided()) {
+            LOG.debug("Skipping candidate extraction; crawl is guided by an inferred model");
+            return;
+        }
         StateVertex currentState = stateMachine.getCurrentState();
         LOG.info("Parsing DOM of state {} for candidate elements", currentState.getName());
         ImmutableList<CandidateElement> extract = candidateExtractor.extract(currentState);
@@ -1459,8 +1469,7 @@ public class Crawler {
     private void waitForRefreshTagIfAny(final Eventable eventable) {
         if ("meta".equalsIgnoreCase(eventable.getElement().getTag())) {
             Pattern p = Pattern.compile("(\\d+);\\s+URL=(.*)");
-            for (Entry<String, String> e :
-                    eventable.getElement().getAttributes().entrySet()) {
+            for (Entry<String, String> e : eventable.getElement().getAttributes().entrySet()) {
                 Matcher m = p.matcher(e.getValue());
                 long waitTime = parseWaitTimeOrReturnDefault(m);
                 try {
@@ -1529,14 +1538,278 @@ public class Crawler {
 
         plugins.runOnNewStatePlugins(context, index);
 
-        LOG.debug("Parsing the index for candidate elements");
-        ImmutableList<CandidateElement> extract = candidateExtractor.extract(index);
+        if (isModelGuided()) {
+            LOG.info("Skipping candidate extraction; crawl is guided by an inferred model");
+        } else {
+            LOG.debug("Parsing the index for candidate elements");
+            ImmutableList<CandidateElement> extract = candidateExtractor.extract(index);
 
-        plugins.runPreStateCrawlingPlugins(context, extract, index);
+            plugins.runPreStateCrawlingPlugins(context, extract, index);
 
-        candidateActionCache.addActions(extract, index);
+            candidateActionCache.addActions(extract, index);
+        }
 
         return index;
+    }
+
+    /**
+     * Walks the configured {@link InferredModel} until every reachable automaton state has been
+     * visited at least once.
+     */
+    public void crawlInferredModel() {
+        InferredModel model = context.getInferredModel();
+        if (model == null) {
+            return;
+        }
+
+        ensureModelCrawlState();
+        ModelCoveragePlanner planner = new ModelCoveragePlanner(model);
+        LOG.info(
+                "Starting model-guided crawl covering {} states ({} transitions)",
+                model.getStateCount(),
+                model.getTransitionCount());
+
+        while (!Thread.currentThread().isInterrupted()) {
+            if (planner.isCoverageComplete()) {
+                LOG.info(
+                        "Visited all reachable model states ({}/{})",
+                        planner.getVisitedCount(),
+                        model.getStateCount());
+                break;
+            }
+
+            List<InferredTransition> enabled = enabledOutgoing(planner.getCurrentStateId());
+            PlannedAction plan = planner.next(enabled);
+            if (plan == null) {
+                LOG.info(
+                        "No remaining reachable unvisited model states ({}/{})",
+                        planner.getVisitedCount(),
+                        model.getStateCount());
+                break;
+            }
+
+            if (plan.isResetToIndex()) {
+                LOG.info("Resetting browser to index to cover remaining model states");
+                reset(stateMachine.getCurrentState().getId());
+                planner.resetToInitial();
+            }
+
+            InferredTransition transition = plan.getTransition();
+            LOG.info(
+                    "Firing model transition {} --{}--> {} ({})",
+                    transition.getSourceId(),
+                    transition.getAction().getType(),
+                    transition.getTargetId(),
+                    transition.getAction().getTarget());
+            Eventable event = fireInferredTransitionWithRetries(transition);
+            if (event != null) {
+                planner.onSuccess(transition);
+                waitAfterModelAction(transition);
+                inspectNewState(event);
+                LOG.info(
+                        "Visited {}/{} model states (current {})",
+                        planner.getVisitedCount(),
+                        model.getStateCount(),
+                        planner.getCurrentStateId());
+            } else {
+                planner.onFailure(transition);
+                LOG.info("Failed to fire model transition {}, marking it failed", transition);
+            }
+        }
+
+        if (crawlpath != null) {
+            context.getSession().addCrawlPath(crawlpath);
+        }
+    }
+
+    private boolean isModelGuided() {
+        return context.getInferredModel() != null;
+    }
+
+    private void ensureModelCrawlState() {
+        if (stateMachine == null) {
+            stateMachine = new StateMachine(
+                    graphProvider.get(), crawlRules.getInvariants(), plugins, stateComparator, new ArrayList<>());
+            context.setStateMachine(stateMachine);
+        }
+        if (crawlpath == null) {
+            crawlpath = new CrawlPath(stateMachine.getCurrentState().getId());
+            context.setCrawlPath(crawlpath);
+        }
+    }
+
+    private List<InferredTransition> enabledOutgoing(String stateId) {
+        List<InferredTransition> enabled = new ArrayList<>();
+        for (InferredTransition transition : context.getInferredModel().getOutgoing(stateId)) {
+            Eventable probe = new Eventable(transition.getAction().toIdentification(), EventType.click);
+            if (isValid(probe)) {
+                enabled.add(transition);
+            } else {
+                LOG.debug(
+                        "Model action not present in DOM: {} ({})",
+                        transition,
+                        transition.getAction().getTarget());
+            }
+        }
+        return enabled;
+    }
+
+    private Eventable fireInferredTransitionWithRetries(InferredTransition transition) {
+        Eventable probe = new Eventable(transition.getAction().toIdentification(), EventType.click);
+        for (int attempt = 1; attempt <= MAX_TRIES; attempt++) {
+            if (!isValid(probe)) {
+                LOG.info(
+                        "Model candidate not found (attempt {}/{}): {} ({})",
+                        attempt,
+                        MAX_TRIES,
+                        transition,
+                        transition.getAction().getTarget());
+                if (attempt == MAX_TRIES || !waitForModelRetry()) {
+                    return null;
+                }
+                continue;
+            }
+            Eventable event = fireInferredTransition(transition);
+            if (event != null) {
+                if (attempt > 1) {
+                    LOG.info("Model transition succeeded on attempt {}/{}", attempt, MAX_TRIES);
+                }
+                return event;
+            }
+            LOG.info("Failed to fire model transition (attempt {}/{}): {}", attempt, MAX_TRIES, transition);
+            if (attempt == MAX_TRIES || !waitForModelRetry()) {
+                return null;
+            }
+        }
+        return null;
+    }
+
+    private boolean waitForModelRetry() {
+        long wait = crawlRules.getWaitAfterEvent();
+        if (wait <= 0) {
+            return !Thread.currentThread().isInterrupted();
+        }
+        try {
+            Thread.sleep(wait);
+            return true;
+        } catch (InterruptedException e) {
+            interruptThread();
+            return false;
+        }
+    }
+
+    private Eventable fireInferredTransition(InferredTransition transition) {
+        Identification identification = transition.getAction().toIdentification();
+        try {
+            if (transition.getAction().isKeyboard()) {
+                List<CharSequence> keys = toSeleniumKeys(transition.getInputs());
+                if (!keys.isEmpty() && !browser.typeKeys(identification, keys.toArray(new CharSequence[0]))) {
+                    return null;
+                }
+                boolean submit = transition.getInputs().containsEnter();
+                Eventable event = new Eventable(identification, submit ? EventType.enter : EventType.click);
+                event.setId(getEventableId());
+                if (!keys.isEmpty() && !waitAfterInferredKeyboard()) {
+                    return null;
+                }
+                return event;
+            }
+
+            Eventable event = new Eventable(identification, EventType.click);
+            event.setId(getEventableId());
+            if (!fireEvent(event, false)) {
+                return null;
+            }
+            return event;
+        } catch (RuntimeException e) {
+            LOG.info("Could not fire inferred transition {}: {}", transition, e.getMessage());
+            return null;
+        }
+    }
+
+    private List<CharSequence> toSeleniumKeys(TransitionInputs inputs) {
+        List<CharSequence> keys = new ArrayList<>();
+        if (inputs == null) {
+            return keys;
+        }
+        for (TypedKey typedKey : inputs.replayableKeys()) {
+            CharSequence mapped = mapTypedKey(typedKey);
+            if (mapped != null) {
+                keys.add(mapped);
+            }
+        }
+        return keys;
+    }
+
+    private CharSequence mapTypedKey(TypedKey typedKey) {
+        if (typedKey.isPrintable()) {
+            return typedKey.getKey();
+        }
+        String key = typedKey.getKey();
+        if (key == null) {
+            return null;
+        }
+        switch (key) {
+            case "Backspace":
+                return Keys.BACK_SPACE;
+            case "Enter":
+                return Keys.RETURN;
+            case "Tab":
+                return Keys.TAB;
+            case "Escape":
+                return Keys.ESCAPE;
+            case "Delete":
+                return Keys.DELETE;
+            case "ArrowLeft":
+                return Keys.ARROW_LEFT;
+            case "ArrowRight":
+                return Keys.ARROW_RIGHT;
+            case "ArrowUp":
+                return Keys.ARROW_UP;
+            case "ArrowDown":
+                return Keys.ARROW_DOWN;
+            case "Home":
+                return Keys.HOME;
+            case "End":
+                return Keys.END;
+            case "PageUp":
+                return Keys.PAGE_UP;
+            case "PageDown":
+                return Keys.PAGE_DOWN;
+            default:
+                LOG.debug("Skipping unmapped model key {}", key);
+                return null;
+        }
+    }
+
+    private boolean waitAfterInferredKeyboard() {
+        long wait = crawlRules.getWaitAfterEvent();
+        if (wait > 0) {
+            try {
+                Thread.sleep(wait);
+            } catch (InterruptedException e) {
+                interruptThread();
+                return false;
+            }
+        }
+        waitConditionChecker.wait(browser);
+        browser.closeOtherWindows();
+        return true;
+    }
+
+    private void waitAfterModelAction(InferredTransition transition) {
+        long suggested = 0;
+        if (transition.getTimings() != null) {
+            suggested = transition.getTimings().suggestedWaitMillis();
+        }
+        long extra = suggested - crawlRules.getWaitAfterEvent();
+        if (extra > 0) {
+            try {
+                Thread.sleep(extra);
+            } catch (InterruptedException e) {
+                interruptThread();
+            }
+        }
     }
 
     public CrawlerContext getContext() {

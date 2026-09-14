@@ -479,6 +479,29 @@ public final class WebDriverBackedEmbeddedBrowser implements EmbeddedBrowser {
     }
 
     /**
+     * @param identification The identification object.
+     * @param keys           The key sequence. The field is not cleared.
+     * @return true if succeeds.
+     */
+    @Override
+    public boolean typeKeys(Identification identification, CharSequence... keys) {
+        if (keys == null || keys.length == 0) {
+            return true;
+        }
+        try {
+            WebElement field = browser.findElement(identification.getWebDriverBy());
+            if (field != null) {
+                field.sendKeys(keys);
+                return true;
+            }
+            return false;
+        } catch (WebDriverException e) {
+            throwIfConnectionException(e);
+            return false;
+        }
+    }
+
+    /**
      * Fires an event on an element using its identification.
      *
      * @param eventable The eventable.

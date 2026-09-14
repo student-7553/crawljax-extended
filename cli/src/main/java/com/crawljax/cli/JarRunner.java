@@ -7,6 +7,7 @@ import com.crawljax.core.CrawljaxRunner;
 import com.crawljax.core.configuration.BrowserConfiguration;
 import com.crawljax.core.configuration.CrawljaxConfiguration;
 import com.crawljax.core.configuration.CrawljaxConfiguration.CrawljaxConfigurationBuilder;
+import com.crawljax.core.model.InferredModel;
 import com.crawljax.plugins.crawloverview.CrawlOverview;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Charsets;
@@ -142,7 +143,26 @@ public class JarRunner {
             builder.crawlRules().clickDefaultElements();
         }
 
-        return builder.build();
+        configureInferredModel(builder);
+
+        CrawljaxConfiguration config = builder.build();
+        logLoadedModel(config);
+        return config;
+    }
+
+    private void configureInferredModel(CrawljaxConfigurationBuilder builder) {
+        if (!options.specifiesModel()) {
+            return;
+        }
+        builder.setInferredModel(new File(options.getSpecifiedModel()));
+    }
+
+    private void logLoadedModel(CrawljaxConfiguration config) {
+        InferredModel model = config.getInferredModel();
+        if (model != null) {
+            System.out.println("Loaded inferred model from " + options.getSpecifiedModel() + " (" + model + ")");
+            System.out.println("Crawl will be guided by the model until all reachable states are visited.");
+        }
     }
 
     private void configureTimers(CrawljaxConfigurationBuilder builder) {

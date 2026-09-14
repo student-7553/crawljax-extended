@@ -1,0 +1,2897 @@
+{
+  "metadata": {
+    "algorithm": "GK-Tail",
+    "k": 2,
+    "traceCount": 1,
+    "interactionCount": 59
+  },
+  "states": [
+    {
+      "id": "q0",
+      "initial": true,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q1",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q2",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q3",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q4",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q5",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q6",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q7",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q8",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q9",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q10",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q11",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 3,
+      "terminalCount": 0
+    },
+    {
+      "id": "q12",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q13",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q14",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q15",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q16",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q17",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q18",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 15,
+      "terminalCount": 0
+    },
+    {
+      "id": "q19",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q20",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q21",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q22",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q23",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 2,
+      "terminalCount": 0
+    },
+    {
+      "id": "q24",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 5,
+      "terminalCount": 0
+    },
+    {
+      "id": "q25",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q26",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 2,
+      "terminalCount": 0
+    },
+    {
+      "id": "q27",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q28",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 2,
+      "terminalCount": 0
+    },
+    {
+      "id": "q29",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q30",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 3,
+      "terminalCount": 0
+    },
+    {
+      "id": "q31",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q32",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q33",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q34",
+      "initial": false,
+      "terminal": true,
+      "visitCount": 1,
+      "terminalCount": 1
+    }
+  ],
+  "transitions": [
+    {
+      "source": "q0",
+      "target": "q1",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-1o17an7>div.css-7x5lpk>div.css-pl1wzh>div.>div.css-vnwgrv>div.css-evczmp>div.css-panji1"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 320,
+          "max": 320,
+          "mean": 320,
+          "sum": 320
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 299.8549999999814,
+          "max": 299.8549999999814,
+          "mean": 299.8549999999814,
+          "sum": 299.8549999999814
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 6.46999999997206,
+          "max": 6.46999999997206,
+          "mean": 6.46999999997206,
+          "sum": 6.46999999997206
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 13.675000000046566,
+          "max": 13.675000000046566,
+          "mean": 13.675000000046566,
+          "sum": 13.675000000046566
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 251.99279005362374,
+          "max": 251.99279005362374,
+          "mean": 251.99279005362374,
+          "sum": 251.99279005362374
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 6.827209946441459,
+          "max": 6.827209946441459,
+          "mean": 6.827209946441459,
+          "sum": 6.827209946441459
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 12.229999999981374,
+          "max": 12.229999999981374,
+          "mean": 12.229999999981374,
+          "sum": 12.229999999981374
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 48.949999999953434,
+          "max": 48.949999999953434,
+          "mean": 48.949999999953434,
+          "sum": 48.949999999953434
+        }
+      }
+    },
+    {
+      "source": "q1",
+      "target": "q2",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-evczmp>div.css-15mvrs5>div.css-15mvrs5>a.active.css-7iovzr>div.css-1myt2vd>div.css-1isemmb"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 32,
+          "max": 32,
+          "mean": 32,
+          "sum": 32
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.6749999998137355,
+          "max": 0.6749999998137355,
+          "mean": 0.6749999998137355,
+          "sum": 0.6749999998137355
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 6.650000000139698,
+          "max": 6.650000000139698,
+          "mean": 6.650000000139698,
+          "sum": 6.650000000139698
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 24.675000000046566,
+          "max": 24.675000000046566,
+          "mean": 24.675000000046566,
+          "sum": 24.675000000046566
+        }
+      }
+    },
+    {
+      "source": "q2",
+      "target": "q3",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-evczmp>div.css-15mvrs5>div.css-15mvrs5>a.active.css-7iovzr>div.css-1myt2vd>div.css-1isemmb"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 16,
+          "max": 16,
+          "mean": 16,
+          "sum": 16
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.4699999999720603,
+          "max": 0.4699999999720603,
+          "mean": 0.4699999999720603,
+          "sum": 0.4699999999720603
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 4.239999999990687,
+          "max": 4.239999999990687,
+          "mean": 4.239999999990687,
+          "sum": 4.239999999990687
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 11.290000000037253,
+          "max": 11.290000000037253,
+          "mean": 11.290000000037253,
+          "sum": 11.290000000037253
+        }
+      }
+    },
+    {
+      "source": "q3",
+      "target": "q4",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-3x8rgh>div.css-6jvhwu>div.css-1o17an7>div.css-7x5lpk>div.css-pl1wzh>div.>div.css-vnwgrv"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 368,
+          "max": 368,
+          "mean": 368,
+          "sum": 368
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 23.570000000065193,
+          "max": 23.570000000065193,
+          "mean": 23.570000000065193,
+          "sum": 23.570000000065193
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 411.32499999995343,
+          "max": 411.32499999995343,
+          "mean": 411.32499999995343,
+          "sum": 411.32499999995343
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 40.375,
+          "max": 40.375,
+          "mean": 40.375,
+          "sum": 40.375
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 325.75499999988824,
+          "max": 325.75499999988824,
+          "mean": 325.75499999988824,
+          "sum": 325.75499999988824
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 17.21499999985099,
+          "max": 17.21499999985099,
+          "mean": 17.21499999985099,
+          "sum": 17.21499999985099
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 34.07000000006519,
+          "max": 34.07000000006519,
+          "mean": 34.07000000006519,
+          "sum": 34.07000000006519
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 98.2300000002142,
+          "max": 98.2300000002142,
+          "mean": 98.2300000002142,
+          "sum": 98.2300000002142
+        }
+      }
+    },
+    {
+      "source": "q4",
+      "target": "q5",
+      "action": {
+        "type": "pointer",
+        "target": "#react-aria2958085288-_r_76_>div.css-1sr3t44"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 200,
+          "max": 200,
+          "mean": 200,
+          "sum": 200
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 5.1049999999813735,
+          "max": 5.1049999999813735,
+          "mean": 5.1049999999813735,
+          "sum": 5.1049999999813735
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 269.80000000004657,
+          "max": 269.80000000004657,
+          "mean": 269.80000000004657,
+          "sum": 269.80000000004657
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 36.89999999990687,
+          "max": 36.89999999990687,
+          "mean": 36.89999999990687,
+          "sum": 36.89999999990687
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 96.5449999999255,
+          "max": 96.5449999999255,
+          "mean": 96.5449999999255,
+          "sum": 96.5449999999255
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 70.25,
+          "max": 70.25,
+          "mean": 70.25,
+          "sum": 70.25
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 17.30999999982305,
+          "max": 17.30999999982305,
+          "mean": 17.30999999982305,
+          "sum": 17.30999999982305
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 127.70000000018626,
+          "max": 127.70000000018626,
+          "mean": 127.70000000018626,
+          "sum": 127.70000000018626
+        }
+      }
+    },
+    {
+      "source": "q5",
+      "target": "q6",
+      "action": {
+        "type": "pointer",
+        "target": "html.>body."
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 120,
+          "max": 120,
+          "mean": 120,
+          "sum": 120
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 3.0149999998975545,
+          "max": 3.0149999998975545,
+          "mean": 3.0149999998975545,
+          "sum": 3.0149999998975545
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 138.9899999999907,
+          "max": 138.9899999999907,
+          "mean": 138.9899999999907,
+          "sum": 138.9899999999907
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 97.06499999994412,
+          "max": 97.06499999994412,
+          "mean": 97.06499999994412,
+          "sum": 97.06499999994412
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 25.249999999869615,
+          "max": 25.249999999869615,
+          "mean": 25.249999999869615,
+          "sum": 25.249999999869615
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 4.04999999994412,
+          "max": 4.04999999994412,
+          "mean": 4.04999999994412,
+          "sum": 4.04999999994412
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 22.21999999997206,
+          "max": 22.21999999997206,
+          "mean": 22.21999999997206,
+          "sum": 22.21999999997206
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 187.55000000004657,
+          "max": 187.55000000004657,
+          "mean": 187.55000000004657,
+          "sum": 187.55000000004657
+        }
+      }
+    },
+    {
+      "source": "q6",
+      "target": "q7",
+      "action": {
+        "type": "pointer",
+        "target": "#react-aria2958085288-_r_7g_>svg."
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 168,
+          "max": 168,
+          "mean": 168,
+          "sum": 168
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 2.294999999925494,
+          "max": 2.294999999925494,
+          "mean": 2.294999999925494,
+          "sum": 2.294999999925494
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 217.7399999999907,
+          "max": 217.7399999999907,
+          "mean": 217.7399999999907,
+          "sum": 217.7399999999907
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 38.90500000002794,
+          "max": 38.90500000002794,
+          "mean": 38.90500000002794,
+          "sum": 38.90500000002794
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 73.03500000012107,
+          "max": 73.03500000012107,
+          "mean": 73.03500000012107,
+          "sum": 73.03500000012107
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 60.704999999869614,
+          "max": 60.704999999869614,
+          "mean": 60.704999999869614,
+          "sum": 60.704999999869614
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 18.21500000008382,
+          "max": 18.21500000008382,
+          "mean": 18.21500000008382,
+          "sum": 18.21500000008382
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 106.98499999986961,
+          "max": 106.98499999986961,
+          "mean": 106.98499999986961,
+          "sum": 106.98499999986961
+        }
+      }
+    },
+    {
+      "source": "q7",
+      "target": "q8",
+      "action": {
+        "type": "pointer",
+        "target": "html.>body."
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 120,
+          "max": 120,
+          "mean": 120,
+          "sum": 120
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 2.9799999999813735,
+          "max": 2.9799999999813735,
+          "mean": 2.9799999999813735,
+          "sum": 2.9799999999813735
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 208.47500000009313,
+          "max": 208.47500000009313,
+          "mean": 208.47500000009313,
+          "sum": 208.47500000009313
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 38.71999999997206,
+          "max": 38.71999999997206,
+          "mean": 38.71999999997206,
+          "sum": 38.71999999997206
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 35.81500000013038,
+          "max": 35.81500000013038,
+          "mean": 35.81500000013038,
+          "sum": 35.81500000013038
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 48.960000000009316,
+          "max": 48.960000000009316,
+          "mean": 48.960000000009316,
+          "sum": 48.960000000009316
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 20.69000000017695,
+          "max": 20.69000000017695,
+          "mean": 20.69000000017695,
+          "sum": 20.69000000017695
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 144.70999999972992,
+          "max": 144.70999999972992,
+          "mean": 144.70999999972992,
+          "sum": 144.70999999972992
+        }
+      }
+    },
+    {
+      "source": "q8",
+      "target": "q9",
+      "action": {
+        "type": "pointer",
+        "target": "#react-aria2958085288-_r_k_"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 152,
+          "max": 152,
+          "mean": 152,
+          "sum": 152
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.9499999999534339,
+          "max": 0.9499999999534339,
+          "mean": 0.9499999999534339,
+          "sum": 0.9499999999534339
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 217.23499999986961,
+          "max": 217.23499999986961,
+          "mean": 217.23499999986961,
+          "sum": 217.23499999986961
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 34.2750000001397,
+          "max": 34.2750000001397,
+          "mean": 34.2750000001397,
+          "sum": 34.2750000001397
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 62.85499999989756,
+          "max": 62.85499999989756,
+          "mean": 62.85499999989756,
+          "sum": 62.85499999989756
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 58.29999999989755,
+          "max": 58.29999999989755,
+          "mean": 58.29999999989755,
+          "sum": 58.29999999989755
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 15.650000000139698,
+          "max": 15.650000000139698,
+          "mean": 15.650000000139698,
+          "sum": 15.650000000139698
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 115.65500000002794,
+          "max": 115.65500000002794,
+          "mean": 115.65500000002794,
+          "sum": 115.65500000002794
+        }
+      }
+    },
+    {
+      "source": "q9",
+      "target": "q10",
+      "action": {
+        "type": "pointer",
+        "target": "html.>body."
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 120,
+          "max": 120,
+          "mean": 120,
+          "sum": 120
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 5.8899999998975545,
+          "max": 5.8899999998975545,
+          "mean": 5.8899999998975545,
+          "sum": 5.8899999998975545
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 191.89000000013039,
+          "max": 191.89000000013039,
+          "mean": 191.89000000013039,
+          "sum": 191.89000000013039
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 34.75499999988824,
+          "max": 34.75499999988824,
+          "mean": 34.75499999988824,
+          "sum": 34.75499999988824
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 39.18499999985099,
+          "max": 39.18499999985099,
+          "mean": 39.18499999985099,
+          "sum": 39.18499999985099
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 49.169999999897556,
+          "max": 49.169999999897556,
+          "mean": 49.169999999897556,
+          "sum": 49.169999999897556
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 17.364999999990687,
+          "max": 17.364999999990687,
+          "mean": 17.364999999990687,
+          "sum": 17.364999999990687
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 126.81500000017695,
+          "max": 126.81500000017695,
+          "mean": 126.81500000017695,
+          "sum": 126.81500000017695
+        }
+      }
+    },
+    {
+      "source": "q10",
+      "target": "q11",
+      "action": {
+        "type": "pointer",
+        "target": "#react-aria2958085288-_r_7_"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 56,
+          "max": 56,
+          "mean": 56,
+          "sum": 56
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.8000000000465661,
+          "max": 0.8000000000465661,
+          "mean": 0.8000000000465661,
+          "sum": 0.8000000000465661
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 122.23500000010245,
+          "max": 122.23500000010245,
+          "mean": 122.23500000010245,
+          "sum": 122.23500000010245
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 22.079999999841675,
+          "max": 22.079999999841675,
+          "mean": 22.079999999841675,
+          "sum": 22.079999999841675
+        }
+      }
+    },
+    {
+      "source": "q11",
+      "target": "q11",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-vnwgrv>div.css-evczmp>div.css-15mvrs5>div.css-15mvrs5>a.active.css-13d5vlg>div.css-7wcn6a"
+      },
+      "count": 2,
+      "timings": {
+        "value": {
+          "count": 2,
+          "min": 16,
+          "max": 24,
+          "mean": 20,
+          "sum": 40
+        },
+        "inputDelay": {
+          "count": 2,
+          "min": 0.5100000000093132,
+          "max": 1.0800000000745058,
+          "mean": 0.7950000000419095,
+          "sum": 1.590000000083819
+        },
+        "processingDuration": {
+          "count": 2,
+          "min": 4.225000000093132,
+          "max": 107.13999999989755,
+          "mean": 55.68249999999534,
+          "sum": 111.36499999999069
+        },
+        "presentationDelay": {
+          "count": 2,
+          "min": 11.745000000111759,
+          "max": 19.264999999897555,
+          "mean": 15.505000000004657,
+          "sum": 31.010000000009313
+        }
+      }
+    },
+    {
+      "source": "q11",
+      "target": "q12",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-vnwgrv>div.css-evczmp>div.css-15mvrs5>div.css-15mvrs5>a.active.css-13d5vlg>div.css-7wcn6a"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 16,
+          "max": 16,
+          "mean": 16,
+          "sum": 16
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.8000000000465661,
+          "max": 0.8000000000465661,
+          "mean": 0.8000000000465661,
+          "sum": 0.8000000000465661
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 4.074999999953434,
+          "max": 4.074999999953434,
+          "mean": 4.074999999953434,
+          "sum": 4.074999999953434
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 11.125,
+          "max": 11.125,
+          "mean": 11.125,
+          "sum": 11.125
+        }
+      }
+    },
+    {
+      "source": "q12",
+      "target": "q13",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-vnwgrv>div.css-evczmp>div.css-15mvrs5>div.css-15mvrs5>a.active.css-13d5vlg>div.css-7wcn6a"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 16,
+          "max": 16,
+          "mean": 16,
+          "sum": 16
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.6299999998882413,
+          "max": 0.6299999998882413,
+          "mean": 0.6299999998882413,
+          "sum": 0.6299999998882413
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 4.040000000037253,
+          "max": 4.040000000037253,
+          "mean": 4.040000000037253,
+          "sum": 4.040000000037253
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 11.330000000074506,
+          "max": 11.330000000074506,
+          "mean": 11.330000000074506,
+          "sum": 11.330000000074506
+        }
+      }
+    },
+    {
+      "source": "q13",
+      "target": "q14",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-evczmp>div.css-15mvrs5>div.css-15mvrs5>a.active.css-7iovzr>div.css-1myt2vd>div.css-1isemmb"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 16,
+          "max": 16,
+          "mean": 16,
+          "sum": 16
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.8200000000651926,
+          "max": 0.8200000000651926,
+          "mean": 0.8200000000651926,
+          "sum": 0.8200000000651926
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 4.449999999953434,
+          "max": 4.449999999953434,
+          "mean": 4.449999999953434,
+          "sum": 4.449999999953434
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 10.729999999981374,
+          "max": 10.729999999981374,
+          "mean": 10.729999999981374,
+          "sum": 10.729999999981374
+        }
+      }
+    },
+    {
+      "source": "q14",
+      "target": "q15",
+      "action": {
+        "type": "pointer",
+        "target": "div.>div.css-vnwgrv>div.css-evczmp>div.css-15mvrs5>div.css-15mvrs5>a.css-1trtw0g>div.css-1myt2vd"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 64,
+          "max": 64,
+          "mean": 64,
+          "sum": 64
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.5800000000745058,
+          "max": 0.5800000000745058,
+          "mean": 0.5800000000745058,
+          "sum": 0.5800000000745058
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 4.644999999785796,
+          "max": 4.644999999785796,
+          "mean": 4.644999999785796,
+          "sum": 4.644999999785796
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 58.7750000001397,
+          "max": 58.7750000001397,
+          "mean": 58.7750000001397,
+          "sum": 58.7750000001397
+        }
+      }
+    },
+    {
+      "source": "q15",
+      "target": "q16",
+      "action": {
+        "type": "pointer",
+        "target": "div.>div.css-vnwgrv>div.css-evczmp>div.css-15mvrs5>div.css-15mvrs5>a.active.css-7iovzr"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 168,
+          "max": 168,
+          "mean": 168,
+          "sum": 168
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 54.89500000001863,
+          "max": 54.89500000001863,
+          "mean": 54.89500000001863,
+          "sum": 54.89500000001863
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 200.39999999990687,
+          "max": 200.39999999990687,
+          "mean": 200.39999999990687,
+          "sum": 200.39999999990687
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 18.820000000065193,
+          "max": 18.820000000065193,
+          "mean": 18.820000000065193,
+          "sum": 18.820000000065193
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 207.15786201334635,
+          "max": 207.15786201334635,
+          "mean": 207.15786201334635,
+          "sum": 207.15786201334635
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 6.2621379865791615,
+          "max": 6.2621379865791615,
+          "mean": 6.2621379865791615,
+          "sum": 6.2621379865791615
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 15.150000000139698,
+          "max": 15.150000000139698,
+          "mean": 15.150000000139698,
+          "sum": 15.150000000139698
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 45.54499999992548,
+          "max": 45.54499999992548,
+          "mean": 45.54499999992548,
+          "sum": 45.54499999992548
+        }
+      }
+    },
+    {
+      "source": "q16",
+      "target": "q17",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-4128zz>a.active.css-3klntp>div.css-1mbigh9>div.css-1bge839>div.css-4128zz>span.css-fluql3"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 16,
+          "max": 16,
+          "mean": 16,
+          "sum": 16
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.970000000204891,
+          "max": 0.970000000204891,
+          "mean": 0.970000000204891,
+          "sum": 0.970000000204891
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 119.33999999985099,
+          "max": 119.33999999985099,
+          "mean": 119.33999999985099,
+          "sum": 119.33999999985099
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 10.59499999997206,
+          "max": 10.59499999997206,
+          "mean": 10.59499999997206,
+          "sum": 10.59499999997206
+        }
+      }
+    },
+    {
+      "source": "q17",
+      "target": "q18",
+      "action": {
+        "type": "pointer",
+        "target": "#react-aria2958085288-_r_147_"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 472,
+          "max": 472,
+          "mean": 472,
+          "sum": 472
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 1.0949999999720603,
+          "max": 1.0949999999720603,
+          "mean": 1.0949999999720603,
+          "sum": 1.0949999999720603
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 453.4849999998696,
+          "max": 453.4849999998696,
+          "mean": 453.4849999998696,
+          "sum": 453.4849999998696
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 138.410000000149,
+          "max": 138.410000000149,
+          "mean": 138.410000000149,
+          "sum": 138.410000000149
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 282.64500000004654,
+          "max": 282.64500000004654,
+          "mean": 282.64500000004654,
+          "sum": 282.64500000004654
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 59.609999999841676,
+          "max": 59.609999999841676,
+          "mean": 59.609999999841676,
+          "sum": 59.609999999841676
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 115.68000000016764,
+          "max": 115.68000000016764,
+          "mean": 115.68000000016764,
+          "sum": 115.68000000016764
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 135.05499999993484,
+          "max": 135.05499999993484,
+          "mean": 135.05499999993484,
+          "sum": 135.05499999993484
+        }
+      }
+    },
+    {
+      "source": "q18",
+      "target": "q18",
+      "action": {
+        "type": "keyboard",
+        "target": "div.css-63gf5t>div.css-4128zz>form.react-aria-Form>label.css-1absm9e>input.css-1gjgvsd"
+      },
+      "count": 13,
+      "timings": {
+        "value": {
+          "count": 13,
+          "min": 64,
+          "max": 200,
+          "mean": 137.23076923076923,
+          "sum": 1784
+        },
+        "inputDelay": {
+          "count": 13,
+          "min": 0.4899999999906868,
+          "max": 10.78000000002794,
+          "mean": 2.2076923076708157,
+          "sum": 28.699999999720603
+        },
+        "processingDuration": {
+          "count": 13,
+          "min": 6.265000000130385,
+          "max": 189.74499999987893,
+          "mean": 70.80461538459461,
+          "sum": 920.4599999997299
+        },
+        "presentationDelay": {
+          "count": 13,
+          "min": 6.810000000055879,
+          "max": 151.1149999999907,
+          "mean": 90.6707692308029,
+          "sum": 1178.7200000004377
+        },
+        "totalScriptDuration": {
+          "count": 13,
+          "min": 47.359999999869615,
+          "max": 139.20999999996275,
+          "mean": 64.799615384581,
+          "sum": 842.394999999553
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 13,
+          "min": 0.010000000009313226,
+          "max": 0.1900000001769513,
+          "mean": 0.08884615384830305,
+          "sum": 1.1550000000279397
+        },
+        "totalPaintDuration": {
+          "count": 13,
+          "min": 5.409999999916181,
+          "max": 101.78499999991618,
+          "mean": 70.33576923076852,
+          "sum": 914.3649999999907
+        },
+        "totalUnattributedDuration": {
+          "count": 13,
+          "min": 4.879999999888241,
+          "max": 101.93999999994412,
+          "mean": 28.45884615387051,
+          "sum": 369.96500000031665
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": " ",
+            "code": "Space",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "0",
+            "code": "Digit0",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "1",
+            "code": "Digit1",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "Backspace",
+            "code": "Backspace",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "e",
+            "code": "KeyE",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "M",
+            "code": "KeyM",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": true,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "n",
+            "code": "KeyN",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "o",
+            "code": "KeyO",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "p",
+            "code": "KeyP",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "r",
+            "code": "KeyR",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "s",
+            "code": "KeyS",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "Shift",
+            "code": "ShiftLeft",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": true,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "y",
+            "code": "KeyY",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q18",
+      "target": "q19",
+      "action": {
+        "type": "keyboard",
+        "target": "div.css-63gf5t>div.css-4128zz>form.react-aria-Form>label.css-1absm9e>input.css-1gjgvsd"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 256,
+          "max": 256,
+          "mean": 256,
+          "sum": 256
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.8649999999906868,
+          "max": 0.8649999999906868,
+          "mean": 0.8649999999906868,
+          "sum": 0.8649999999906868
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 108.56000000005588,
+          "max": 108.56000000005588,
+          "mean": 108.56000000005588,
+          "sum": 108.56000000005588
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 146.96500000008382,
+          "max": 146.96500000008382,
+          "mean": 146.96500000008382,
+          "sum": 146.96500000008382
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 164.16499999980442,
+          "max": 164.16499999980442,
+          "mean": 164.16499999980442,
+          "sum": 164.16499999980442
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 0.010000000009313226,
+          "max": 0.010000000009313226,
+          "mean": 0.010000000009313226,
+          "sum": 0.010000000009313226
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 75.06499999994412,
+          "max": 75.06499999994412,
+          "mean": 75.06499999994412,
+          "sum": 75.06499999994412
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 17.15000000037253,
+          "max": 17.15000000037253,
+          "mean": 17.15000000037253,
+          "sum": 17.15000000037253
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "a",
+            "code": "KeyA",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q18",
+      "target": "q21",
+      "action": {
+        "type": "keyboard",
+        "target": "div.css-63gf5t>div.css-4128zz>form.react-aria-Form>label.css-1absm9e>input.css-1gjgvsd"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 232,
+          "max": 232,
+          "mean": 232,
+          "sum": 232
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 18.209999999962747,
+          "max": 18.209999999962747,
+          "mean": 18.209999999962747,
+          "sum": 18.209999999962747
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 129.9199999999255,
+          "max": 129.9199999999255,
+          "mean": 129.9199999999255,
+          "sum": 129.9199999999255
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 84.47999999998137,
+          "max": 84.47999999998137,
+          "mean": 84.47999999998137,
+          "sum": 84.47999999998137
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 118.52499999990687,
+          "max": 118.52499999990687,
+          "mean": 118.52499999990687,
+          "sum": 118.52499999990687
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 0.014999999897554517,
+          "max": 0.014999999897554517,
+          "mean": 0.014999999897554517,
+          "sum": 0.014999999897554517
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 83.46500000008382,
+          "max": 83.46500000008382,
+          "mean": 83.46500000008382,
+          "sum": 83.46500000008382
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 30.604999999981374,
+          "max": 30.604999999981374,
+          "mean": 30.604999999981374,
+          "sum": 30.604999999981374
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "0",
+            "code": "Digit0",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q19",
+      "target": "q20",
+      "action": {
+        "type": "keyboard",
+        "target": "div.css-63gf5t>div.css-4128zz>form.react-aria-Form>label.css-1absm9e>input.css-1gjgvsd"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 168,
+          "max": 168,
+          "mean": 168,
+          "sum": 168
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 21.024999999906868,
+          "max": 21.024999999906868,
+          "mean": 21.024999999906868,
+          "sum": 21.024999999906868
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 69.88500000000931,
+          "max": 69.88500000000931,
+          "mean": 69.88500000000931,
+          "sum": 69.88500000000931
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 77.33499999996275,
+          "max": 77.33499999996275,
+          "mean": 77.33499999996275,
+          "sum": 77.33499999996275
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 84.37999999988824,
+          "max": 84.37999999988824,
+          "mean": 84.37999999988824,
+          "sum": 84.37999999988824
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 0.010000000009313226,
+          "max": 0.010000000009313226,
+          "mean": 0.010000000009313226,
+          "sum": 0.010000000009313226
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 76.5199999997858,
+          "max": 76.5199999997858,
+          "mean": 76.5199999997858,
+          "sum": 76.5199999997858
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 7.335000000195578,
+          "max": 7.335000000195578,
+          "mean": 7.335000000195578,
+          "sum": 7.335000000195578
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "l",
+            "code": "KeyL",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q20",
+      "target": "q18",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-63gf5t>div.css-4128zz>form.react-aria-Form>label.css-1absm9e>input.css-1gjgvsd"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 88,
+          "max": 88,
+          "mean": 88,
+          "sum": 88
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 1.1649999998044223,
+          "max": 1.1649999998044223,
+          "mean": 1.1649999998044223,
+          "sum": 1.1649999998044223
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 3.8500000000931323,
+          "max": 3.8500000000931323,
+          "mean": 3.8500000000931323,
+          "sum": 3.8500000000931323
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 82.98500000010245,
+          "max": 82.98500000010245,
+          "mean": 82.98500000010245,
+          "sum": 82.98500000010245
+        }
+      }
+    },
+    {
+      "source": "q21",
+      "target": "q22",
+      "action": {
+        "type": "keyboard",
+        "target": "div.css-63gf5t>div.css-4128zz>form.react-aria-Form>label.css-1absm9e>input.css-1gjgvsd"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 128,
+          "max": 128,
+          "mean": 128,
+          "sum": 128
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.5200000000186265,
+          "max": 0.5200000000186265,
+          "mean": 0.5200000000186265,
+          "sum": 0.5200000000186265
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 55.14500000001863,
+          "max": 55.14500000001863,
+          "mean": 55.14500000001863,
+          "sum": 55.14500000001863
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 72.58499999996275,
+          "max": 72.58499999996275,
+          "mean": 72.58499999996275,
+          "sum": 72.58499999996275
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 50.875,
+          "max": 50.875,
+          "mean": 50.875,
+          "sum": 50.875
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 0.014999999897554517,
+          "max": 0.014999999897554517,
+          "mean": 0.014999999897554517,
+          "sum": 0.014999999897554517
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 70.96500000008382,
+          "max": 70.96500000008382,
+          "mean": 70.96500000008382,
+          "sum": 70.96500000008382
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 6.3950000000186265,
+          "max": 6.3950000000186265,
+          "mean": 6.3950000000186265,
+          "sum": 6.3950000000186265
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "0",
+            "code": "Digit0",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q22",
+      "target": "q23",
+      "action": {
+        "type": "pointer",
+        "target": ""
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 96,
+          "max": 96,
+          "mean": 96,
+          "sum": 96
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 1.3900000001303852,
+          "max": 1.3900000001303852,
+          "mean": 1.3900000001303852,
+          "sum": 1.3900000001303852
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 104.51499999989755,
+          "max": 104.51499999989755,
+          "mean": 104.51499999989755,
+          "sum": 104.51499999989755
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 76.56000000005588,
+          "max": 76.56000000005588,
+          "mean": 76.56000000005588,
+          "sum": 76.56000000005588
+        }
+      }
+    },
+    {
+      "source": "q23",
+      "target": "q24",
+      "action": {
+        "type": "pointer",
+        "target": ""
+      },
+      "count": 2,
+      "timings": {
+        "value": {
+          "count": 2,
+          "min": 144,
+          "max": 152,
+          "mean": 148,
+          "sum": 296
+        },
+        "inputDelay": {
+          "count": 2,
+          "min": 0.7449999998789281,
+          "max": 0.8599999998696148,
+          "mean": 0.8024999998742715,
+          "sum": 1.604999999748543
+        },
+        "processingDuration": {
+          "count": 2,
+          "min": 127.82000000006519,
+          "max": 142.2399999999907,
+          "mean": 135.03000000002794,
+          "sum": 270.0600000000559
+        },
+        "presentationDelay": {
+          "count": 2,
+          "min": 8.900000000139698,
+          "max": 15.43500000005588,
+          "mean": 12.167500000097789,
+          "sum": 24.335000000195578
+        },
+        "totalScriptDuration": {
+          "count": 2,
+          "min": 122.97,
+          "max": 132.7600000000093,
+          "mean": 127.86500000000466,
+          "sum": 255.7300000000093
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 2,
+          "min": 2.784999999888241,
+          "max": 7.8950000000186265,
+          "mean": 5.3399999999534336,
+          "sum": 10.679999999906867
+        },
+        "totalPaintDuration": {
+          "count": 2,
+          "min": 1.3700000001117587,
+          "max": 7.955000000074506,
+          "mean": 4.662500000093132,
+          "sum": 9.325000000186265
+        },
+        "totalUnattributedDuration": {
+          "count": 2,
+          "min": 9.974999999860302,
+          "max": 10.290000000037253,
+          "mean": 10.132499999948777,
+          "sum": 20.264999999897555
+        }
+      }
+    },
+    {
+      "source": "q24",
+      "target": "q24",
+      "action": {
+        "type": "keyboard",
+        "target": "div.>div.animated>div.>div.css-oylcpw>div.css-w4ysv>div.css-6rn6nb>div.css-reayz8>input.css-1gjgvsd"
+      },
+      "count": 3,
+      "timings": {
+        "value": {
+          "count": 3,
+          "min": 16,
+          "max": 96,
+          "mean": 66.66666666666667,
+          "sum": 200
+        },
+        "inputDelay": {
+          "count": 3,
+          "min": 0.6650000000372529,
+          "max": 0.8299999998416752,
+          "mean": 0.7316666666107873,
+          "sum": 2.194999999832362
+        },
+        "processingDuration": {
+          "count": 3,
+          "min": 9.714999999850988,
+          "max": 91.50500000012107,
+          "mean": 60.98333333331781,
+          "sum": 182.94999999995343
+        },
+        "presentationDelay": {
+          "count": 3,
+          "min": 5.254999999888241,
+          "max": 6.705000000074506,
+          "mean": 5.954999999996896,
+          "sum": 17.864999999990687
+        },
+        "totalScriptDuration": {
+          "count": 2,
+          "min": 75.25499999988824,
+          "max": 84.98999999999069,
+          "mean": 80.12249999993946,
+          "sum": 160.24499999987893
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 2,
+          "min": 0.010000000009313226,
+          "max": 0.17500000004656613,
+          "mean": 0.09250000002793968,
+          "sum": 0.18500000005587935
+        },
+        "totalPaintDuration": {
+          "count": 2,
+          "min": 4.2649999998975545,
+          "max": 5.875,
+          "mean": 5.069999999948777,
+          "sum": 10.139999999897555
+        },
+        "totalUnattributedDuration": {
+          "count": 2,
+          "min": 8.03000000002794,
+          "max": 8.125,
+          "mean": 8.07750000001397,
+          "sum": 16.15500000002794
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "0",
+            "code": "Numpad0",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "1",
+            "code": "Numpad1",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "2",
+            "code": "Numpad2",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q24",
+      "target": "q25",
+      "action": {
+        "type": "keyboard",
+        "target": "div.>div.animated>div.>div.css-oylcpw>div.css-w4ysv>div.css-6rn6nb>div.css-reayz8>input.css-1gjgvsd"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 16,
+          "max": 16,
+          "mean": 16,
+          "sum": 16
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.6149999999906868,
+          "max": 0.6149999999906868,
+          "mean": 0.6149999999906868,
+          "sum": 0.6149999999906868
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 10.139999999897555,
+          "max": 10.139999999897555,
+          "mean": 10.139999999897555,
+          "sum": 10.139999999897555
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 5.4850000001024455,
+          "max": 5.4850000001024455,
+          "mean": 5.4850000001024455,
+          "sum": 5.4850000001024455
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "0",
+            "code": "Numpad0",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q24",
+      "target": "q27",
+      "action": {
+        "type": "keyboard",
+        "target": "div.>div.animated>div.>div.css-oylcpw>div.css-w4ysv>div.css-6rn6nb>div.css-reayz8>input.css-1gjgvsd"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 16,
+          "max": 16,
+          "mean": 16,
+          "sum": 16
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.6100000001024455,
+          "max": 0.6100000001024455,
+          "mean": 0.6100000001024455,
+          "sum": 0.6100000001024455
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 10.329999999841675,
+          "max": 10.329999999841675,
+          "mean": 10.329999999841675,
+          "sum": 10.329999999841675
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 5.350000000093132,
+          "max": 5.350000000093132,
+          "mean": 5.350000000093132,
+          "sum": 5.350000000093132
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "0",
+            "code": "Numpad0",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q25",
+      "target": "q26",
+      "action": {
+        "type": "keyboard",
+        "target": "div.>div.animated>div.>div.css-oylcpw>div.css-w4ysv>div.css-6rn6nb>div.css-reayz8>input.css-1gjgvsd"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 16,
+          "max": 16,
+          "mean": 16,
+          "sum": 16
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.6199999998789281,
+          "max": 0.6199999998789281,
+          "mean": 0.6199999998789281,
+          "sum": 0.6199999998789281
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 12.370000000111759,
+          "max": 12.370000000111759,
+          "mean": 12.370000000111759,
+          "sum": 12.370000000111759
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 3.2649999998975545,
+          "max": 3.2649999998975545,
+          "mean": 3.2649999998975545,
+          "sum": 3.2649999998975545
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "0",
+            "code": "Numpad0",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q26",
+      "target": "q23",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-1y7d8dh>div.css-u3h9fs>div.css-4nzckd>div.css-y121fp>div.css-1h06z2i>div.>div.animated"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 176,
+          "max": 176,
+          "mean": 176,
+          "sum": 176
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 1.3100000000558794,
+          "max": 1.3100000000558794,
+          "mean": 1.3100000000558794,
+          "sum": 1.3100000000558794
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 170.2050000000745,
+          "max": 170.2050000000745,
+          "mean": 170.2050000000745,
+          "sum": 170.2050000000745
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 6.599999999860302,
+          "max": 6.599999999860302,
+          "mean": 6.599999999860302,
+          "sum": 6.599999999860302
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 159.70999999996275,
+          "max": 159.70999999996275,
+          "mean": 159.70999999996275,
+          "sum": 159.70999999996275
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 0.010000000009313226,
+          "max": 0.010000000009313226,
+          "mean": 0.010000000009313226,
+          "sum": 0.010000000009313226
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 6.21999999997206,
+          "max": 6.21999999997206,
+          "mean": 6.21999999997206,
+          "sum": 6.21999999997206
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 12.175000000046566,
+          "max": 12.175000000046566,
+          "mean": 12.175000000046566,
+          "sum": 12.175000000046566
+        }
+      }
+    },
+    {
+      "source": "q26",
+      "target": "q29",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-1y7d8dh>div.css-u3h9fs>div.css-4nzckd>div.css-y121fp>div.css-1h06z2i>div.>div.animated"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 128,
+          "max": 128,
+          "mean": 128,
+          "sum": 128
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 1.1699999999254942,
+          "max": 1.1699999999254942,
+          "mean": 1.1699999999254942,
+          "sum": 1.1699999999254942
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 126.01500000013039,
+          "max": 126.01500000013039,
+          "mean": 126.01500000013039,
+          "sum": 126.01500000013039
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 2.6799999999348074,
+          "max": 2.6799999999348074,
+          "mean": 2.6799999999348074,
+          "sum": 2.6799999999348074
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 115.68500000005588,
+          "max": 115.68500000005588,
+          "mean": 115.68500000005588,
+          "sum": 115.68500000005588
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 0.010000000009313226,
+          "max": 0.010000000009313226,
+          "mean": 0.010000000009313226,
+          "sum": 0.010000000009313226
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 2.290000000037253,
+          "max": 2.290000000037253,
+          "mean": 2.290000000037253,
+          "sum": 2.290000000037253
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 11.879999999888241,
+          "max": 11.879999999888241,
+          "mean": 11.879999999888241,
+          "sum": 11.879999999888241
+        }
+      }
+    },
+    {
+      "source": "q27",
+      "target": "q28",
+      "action": {
+        "type": "keyboard",
+        "target": "div.>div.animated>div.>div.css-oylcpw>div.css-w4ysv>div.css-6rn6nb>div.css-reayz8>input.css-1gjgvsd"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 16,
+          "max": 16,
+          "mean": 16,
+          "sum": 16
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.6650000000372529,
+          "max": 0.6650000000372529,
+          "mean": 0.6650000000372529,
+          "sum": 0.6650000000372529
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 9.725000000093132,
+          "max": 9.725000000093132,
+          "mean": 9.725000000093132,
+          "sum": 9.725000000093132
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 5.869999999878928,
+          "max": 5.869999999878928,
+          "mean": 5.869999999878928,
+          "sum": 5.869999999878928
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "0",
+            "code": "Numpad0",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q28",
+      "target": "q26",
+      "action": {
+        "type": "keyboard",
+        "target": "div.css-1r9mmmg>div.css-jdrt9o>div.css-1y7d8dh>div.css-u3h9fs>div.css-4nzckd>div.css-y121fp"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 88,
+          "max": 88,
+          "mean": 88,
+          "sum": 88
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.8249999999534339,
+          "max": 0.8249999999534339,
+          "mean": 0.8249999999534339,
+          "sum": 0.8249999999534339
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 168.25,
+          "max": 168.25,
+          "mean": 168.25,
+          "sum": 168.25
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 0,
+          "max": 0,
+          "mean": 0,
+          "sum": 0
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 132.30500000000933,
+          "max": 132.30500000000933,
+          "mean": 132.30500000000933,
+          "sum": 132.30500000000933
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 95416.19700000004,
+          "max": 95416.19700000004,
+          "mean": 95416.19700000004,
+          "sum": 95416.19700000004
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 0,
+          "max": 0,
+          "mean": 0,
+          "sum": 0
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": -95379.4270000001,
+          "max": -95379.4270000001,
+          "mean": -95379.4270000001,
+          "sum": -95379.4270000001
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "Enter",
+            "code": "Enter",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q28",
+      "target": "q32",
+      "action": {
+        "type": "keyboard",
+        "target": "div.css-1r9mmmg>div.css-jdrt9o>div.css-1y7d8dh>div.css-u3h9fs>div.css-4nzckd>div.css-y121fp"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 80,
+          "max": 80,
+          "mean": 80,
+          "sum": 80
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.8600000001024455,
+          "max": 0.8600000001024455,
+          "mean": 0.8600000001024455,
+          "sum": 0.8600000001024455
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 125.63999999989755,
+          "max": 125.63999999989755,
+          "mean": 125.63999999989755,
+          "sum": 125.63999999989755
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 3.199999999953434,
+          "max": 3.199999999953434,
+          "mean": 3.199999999953434,
+          "sum": 3.199999999953434
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 70.24500000019557,
+          "max": 70.24500000019557,
+          "mean": 70.24500000019557,
+          "sum": 70.24500000019557
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 0.5950000001210719,
+          "max": 0.5950000001210719,
+          "mean": 0.5950000001210719,
+          "sum": 0.5950000001210719
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 0,
+          "max": 0,
+          "mean": 0,
+          "sum": 0
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 58.859999999636784,
+          "max": 58.859999999636784,
+          "mean": 58.859999999636784,
+          "sum": 58.859999999636784
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "Enter",
+            "code": "Enter",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q29",
+      "target": "q30",
+      "action": {
+        "type": "pointer",
+        "target": ""
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 72,
+          "max": 72,
+          "mean": 72,
+          "sum": 72
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.6950000000651926,
+          "max": 0.6950000000651926,
+          "mean": 0.6950000000651926,
+          "sum": 0.6950000000651926
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 60.75499999988824,
+          "max": 60.75499999988824,
+          "mean": 60.75499999988824,
+          "sum": 60.75499999988824
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 10.550000000046566,
+          "max": 10.550000000046566,
+          "mean": 10.550000000046566,
+          "sum": 10.550000000046566
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 58.045000000046564,
+          "max": 58.045000000046564,
+          "mean": 58.045000000046564,
+          "sum": 58.045000000046564
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 1.8900000000093131,
+          "max": 1.8900000000093131,
+          "mean": 1.8900000000093131,
+          "sum": 1.8900000000093131
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 6.475000000093132,
+          "max": 6.475000000093132,
+          "mean": 6.475000000093132,
+          "sum": 6.475000000093132
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 5.589999999850992,
+          "max": 5.589999999850992,
+          "mean": 5.589999999850992,
+          "sum": 5.589999999850992
+        }
+      }
+    },
+    {
+      "source": "q30",
+      "target": "q30",
+      "action": {
+        "type": "keyboard",
+        "target": ""
+      },
+      "count": 2,
+      "timings": {
+        "value": {
+          "count": 2,
+          "min": 16,
+          "max": 88,
+          "mean": 52,
+          "sum": 104
+        },
+        "inputDelay": {
+          "count": 2,
+          "min": 0.6399999998975545,
+          "max": 0.7149999998509884,
+          "mean": 0.6774999998742715,
+          "sum": 1.354999999748543
+        },
+        "processingDuration": {
+          "count": 2,
+          "min": 9.669999999925494,
+          "max": 82.10499999998137,
+          "mean": 45.887499999953434,
+          "sum": 91.77499999990687
+        },
+        "presentationDelay": {
+          "count": 2,
+          "min": 5.565000000176951,
+          "max": 5.955000000074506,
+          "mean": 5.7600000001257285,
+          "sum": 11.520000000251457
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 76.23500000010245,
+          "max": 76.23500000010245,
+          "mean": 76.23500000010245,
+          "sum": 76.23500000010245
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 0.010000000009313226,
+          "max": 0.010000000009313226,
+          "mean": 0.010000000009313226,
+          "sum": 0.010000000009313226
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 4.745000000111759,
+          "max": 4.745000000111759,
+          "mean": 4.745000000111759,
+          "sum": 4.745000000111759
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 7.394999999785796,
+          "max": 7.394999999785796,
+          "mean": 7.394999999785796,
+          "sum": 7.394999999785796
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "0",
+            "code": "Numpad0",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "1",
+            "code": "Numpad1",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q30",
+      "target": "q31",
+      "action": {
+        "type": "keyboard",
+        "target": ""
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 16,
+          "max": 16,
+          "mean": 16,
+          "sum": 16
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.7450000001117587,
+          "max": 0.7450000001117587,
+          "mean": 0.7450000001117587,
+          "sum": 0.7450000001117587
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 9.71999999997206,
+          "max": 9.71999999997206,
+          "mean": 9.71999999997206,
+          "sum": 9.71999999997206
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 5.839999999850988,
+          "max": 5.839999999850988,
+          "mean": 5.839999999850988,
+          "sum": 5.839999999850988
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "0",
+            "code": "Numpad0",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q31",
+      "target": "q28",
+      "action": {
+        "type": "keyboard",
+        "target": ""
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 16,
+          "max": 16,
+          "mean": 16,
+          "sum": 16
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 0.6300000001210719,
+          "max": 0.6300000001210719,
+          "mean": 0.6300000001210719,
+          "sum": 0.6300000001210719
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 10.739999999990687,
+          "max": 10.739999999990687,
+          "mean": 10.739999999990687,
+          "sum": 10.739999999990687
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 4.869999999878928,
+          "max": 4.869999999878928,
+          "mean": 4.869999999878928,
+          "sum": 4.869999999878928
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "0",
+            "code": "Numpad0",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q32",
+      "target": "q33",
+      "action": {
+        "type": "pointer",
+        "target": "div.css-1y7d8dh>div.css-u3h9fs>div.css-4nzckd>div.css-y121fp>div.css-1h06z2i>div.>div.animated"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 128,
+          "max": 128,
+          "mean": 128,
+          "sum": 128
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 1.4399999999441206,
+          "max": 1.4399999999441206,
+          "mean": 1.4399999999441206,
+          "sum": 1.4399999999441206
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 125.28000000002794,
+          "max": 125.28000000002794,
+          "mean": 125.28000000002794,
+          "sum": 125.28000000002794
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 12.18999999994412,
+          "max": 12.18999999994412,
+          "mean": 12.18999999994412,
+          "sum": 12.18999999994412
+        },
+        "totalScriptDuration": {
+          "count": 1,
+          "min": 112.10499999998137,
+          "max": 112.10499999998137,
+          "mean": 112.10499999998137,
+          "sum": 112.10499999998137
+        },
+        "totalStyleAndLayoutDuration": {
+          "count": 1,
+          "min": 0.010000000009313226,
+          "max": 0.010000000009313226,
+          "mean": 0.010000000009313226,
+          "sum": 0.010000000009313226
+        },
+        "totalPaintDuration": {
+          "count": 1,
+          "min": 0,
+          "max": 0,
+          "mean": 0,
+          "sum": 0
+        },
+        "totalUnattributedDuration": {
+          "count": 1,
+          "min": 26.794999999925494,
+          "max": 26.794999999925494,
+          "mean": 26.794999999925494,
+          "sum": 26.794999999925494
+        }
+      }
+    },
+    {
+      "source": "q33",
+      "target": "q34",
+      "action": {
+        "type": "pointer",
+        "target": "div.>div.css-vnwgrv>div.css-evczmp>div.css-15mvrs5>div.css-15mvrs5>a.active.css-7iovzr"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 32,
+          "max": 32,
+          "mean": 32,
+          "sum": 32
+        },
+        "inputDelay": {
+          "count": 1,
+          "min": 1.0500000000465661,
+          "max": 1.0500000000465661,
+          "mean": 1.0500000000465661,
+          "sum": 1.0500000000465661
+        },
+        "processingDuration": {
+          "count": 1,
+          "min": 5.6450000000186265,
+          "max": 5.6450000000186265,
+          "mean": 5.6450000000186265,
+          "sum": 5.6450000000186265
+        },
+        "presentationDelay": {
+          "count": 1,
+          "min": 25.304999999934807,
+          "max": 25.304999999934807,
+          "mean": 25.304999999934807,
+          "sum": 25.304999999934807
+        }
+      }
+    }
+  ]
+}

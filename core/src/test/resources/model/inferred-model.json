@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "algorithm": "GK-Tail",
+    "k": 2,
+    "traceCount": 1,
+    "interactionCount": 4
+  },
+  "states": [
+    {
+      "id": "q0",
+      "initial": true,
+      "terminal": false,
+      "visitCount": 1,
+      "terminalCount": 0
+    },
+    {
+      "id": "q1",
+      "initial": false,
+      "terminal": false,
+      "visitCount": 2,
+      "terminalCount": 0
+    },
+    {
+      "id": "q2",
+      "initial": false,
+      "terminal": true,
+      "visitCount": 1,
+      "terminalCount": 1
+    }
+  ],
+  "transitions": [
+    {
+      "source": "q0",
+      "target": "q1",
+      "action": {
+        "type": "pointer",
+        "target": "div.menu>a.home"
+      },
+      "count": 1,
+      "timings": {
+        "value": {
+          "count": 1,
+          "min": 100,
+          "max": 100,
+          "mean": 100,
+          "sum": 100
+        }
+      }
+    },
+    {
+      "source": "q1",
+      "target": "q1",
+      "action": {
+        "type": "keyboard",
+        "target": "form>input.search"
+      },
+      "count": 2,
+      "timings": {
+        "value": {
+          "count": 2,
+          "min": 64,
+          "max": 80,
+          "mean": 72,
+          "sum": 144
+        }
+      },
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "a",
+            "code": "KeyA",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "Backspace",
+            "code": "Backspace",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "H",
+            "code": "KeyH",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": true,
+            "metaKey": false,
+            "repeat": false
+          },
+          {
+            "key": "i",
+            "code": "KeyI",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    },
+    {
+      "source": "q1",
+      "target": "q2",
+      "action": {
+        "type": "keyboard",
+        "target": "form>input.search"
+      },
+      "count": 1,
+      "inputs": {
+        "typedKeys": [
+          {
+            "key": "Enter",
+            "code": "Enter",
+            "ctrlKey": false,
+            "altKey": false,
+            "shiftKey": false,
+            "metaKey": false,
+            "repeat": false
+          }
+        ]
+      }
+    }
+  ]
+}

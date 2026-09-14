@@ -24,18 +24,25 @@ public class CrawlController implements Callable<CrawlSession> {
 
     private static final Logger LOG = LoggerFactory.getLogger(CrawlController.class);
 
-    /* Why is this property being set?
+    /*
+     * Why is this property being set?
      * Creates a problem with selenium latest versions.
-
-      java.lang.ExceptionInInitializerError
-    Caused by: java.lang.IllegalArgumentException: Unknown HttpClient factory apache
-    at org.openqa.selenium.remote.http.HttpClient$Factory.create(HttpClient.java:57)
-    at org.openqa.selenium.remote.http.HttpClient$Factory.createDefault(HttpClient.java:73)
-    at org.openqa.selenium.remote.HttpCommandExecutor$DefaultClientFactoryHolder.<clinit>(HttpCommandExecutor.java:58)
-    ... 60 more
-
-
-     * */
+     * 
+     * java.lang.ExceptionInInitializerError
+     * Caused by: java.lang.IllegalArgumentException: Unknown HttpClient factory
+     * apache
+     * at
+     * org.openqa.selenium.remote.http.HttpClient$Factory.create(HttpClient.java:57)
+     * at
+     * org.openqa.selenium.remote.http.HttpClient$Factory.createDefault(HttpClient.
+     * java:73)
+     * at
+     * org.openqa.selenium.remote.HttpCommandExecutor$DefaultClientFactoryHolder.<
+     * clinit>(HttpCommandExecutor.java:58)
+     * ... 61 more
+     * 
+     * 
+     */
 
     private final Provider<CrawlTaskConsumer> consumerFactory;
     private final ExecutorService executor;
@@ -100,8 +107,9 @@ public class CrawlController implements Callable<CrawlSession> {
     }
 
     /**
-     * @return The {@link ExitStatus} crawljax stopped or <code>null</code> when it hasn't stopped
-     * yet.
+     * @return The {@link ExitStatus} crawljax stopped or <code>null</code> when it
+     *         hasn't stopped
+     *         yet.
      */
     public ExitStatus getReason() {
         return exitReason;
@@ -124,9 +132,13 @@ public class CrawlController implements Callable<CrawlSession> {
     }
 
     private void executeConsumers(CrawlTaskConsumer firstConsumer) {
-        LOG.debug("Starting {} consumers", config.getBrowserConfig().getNumberOfBrowsers());
+        int browsers = config.getInferredModel() != null ? 1 : config.getBrowserConfig().getNumberOfBrowsers();
+        if (config.getInferredModel() != null) {
+            LOG.info("Model-guided crawl: using a single browser to cover inferred-model states");
+        }
+        LOG.debug("Starting {} consumers", browsers);
         executor.submit(firstConsumer);
-        for (int i = 1; i < config.getBrowserConfig().getNumberOfBrowsers(); i++) {
+        for (int i = 1; i < browsers; i++) {
             executor.submit(consumerFactory.get());
         }
         try {

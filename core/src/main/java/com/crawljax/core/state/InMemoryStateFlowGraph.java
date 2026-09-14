@@ -358,8 +358,8 @@ public class InMemoryStateFlowGraph implements Serializable, StateFlowGraph {
     public List<List<GraphPath<StateVertex, Eventable>>> getAllPossiblePaths(StateVertex index) {
         final List<List<GraphPath<StateVertex, Eventable>>> results = Lists.newArrayList();
 
-        final KShortestSimplePaths<StateVertex, Eventable> kPaths =
-                new KShortestSimplePaths<>(this.sfg, Integer.MAX_VALUE);
+        final KShortestSimplePaths<StateVertex, Eventable> kPaths = new KShortestSimplePaths<>(this.sfg,
+                Integer.MAX_VALUE);
 
         for (StateVertex state : getDeepStates(index)) {
             List<GraphPath<StateVertex, Eventable>> paths = kPaths.getPaths(index, state, Integer.MAX_VALUE);

@@ -8,6 +8,8 @@ import com.crawljax.clickabledetection.ClickableDetectorPlugin;
 import com.crawljax.core.Crawler;
 import com.crawljax.core.CrawljaxException;
 import com.crawljax.core.configuration.CrawlRules.CrawlRulesBuilder;
+import com.crawljax.core.model.InferredModel;
+import com.crawljax.core.model.InferredModelLoader;
 import com.crawljax.core.plugin.Plugin;
 import com.crawljax.core.state.DefaultStateVertexFactory;
 import com.crawljax.core.state.StateVertexFactory;
@@ -23,6 +25,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -52,6 +55,11 @@ public class CrawljaxConfiguration {
     private File pluginOutput = null;
 
     private StateVertexFactory stateVertexFactory;
+
+    /**
+     * Optional inferred user-behavior automaton used to guide crawling.
+     */
+    private InferredModel inferredModel;
 
     private CrawljaxConfiguration() {}
 
@@ -171,6 +179,13 @@ public class CrawljaxConfiguration {
 
     public StateVertexFactory getStateVertexFactory() {
         return stateVertexFactory;
+    }
+
+    /**
+     * @return the inferred user-behavior model, or {@code null} if none was configured.
+     */
+    public InferredModel getInferredModel() {
+        return inferredModel;
     }
 
     @Override
@@ -382,6 +397,43 @@ public class CrawljaxConfiguration {
         public CrawljaxConfigurationBuilder setStateVertexFactory(StateVertexFactory vertexFactory) {
             Preconditions.checkNotNull(vertexFactory);
             config.stateVertexFactory = vertexFactory;
+            return this;
+        }
+
+        /**
+         * Store an already-loaded inferred model that the crawler can later follow.
+         *
+         * @param model the automaton loaded from JSON
+         * @return this builder for method chaining
+         */
+        public CrawljaxConfigurationBuilder setInferredModel(InferredModel model) {
+            Preconditions.checkNotNull(model, "Inferred model must not be null");
+            config.inferredModel = model;
+            return this;
+        }
+
+        /**
+         * Load a GK-Tail (or compatible) inferred model from JSON and store it on this
+         * configuration.
+         *
+         * @param modelFile path to {@code model.json}
+         * @return this builder for method chaining
+         */
+        public CrawljaxConfigurationBuilder setInferredModel(File modelFile) {
+            Preconditions.checkNotNull(modelFile, "Inferred model file must not be null");
+            return setInferredModel(modelFile.toPath());
+        }
+
+        /**
+         * Load a GK-Tail (or compatible) inferred model from JSON and store it on this
+         * configuration.
+         *
+         * @param modelPath path to {@code model.json}
+         * @return this builder for method chaining
+         */
+        public CrawljaxConfigurationBuilder setInferredModel(Path modelPath) {
+            Preconditions.checkNotNull(modelPath, "Inferred model path must not be null");
+            config.inferredModel = InferredModelLoader.load(modelPath);
             return this;
         }
 

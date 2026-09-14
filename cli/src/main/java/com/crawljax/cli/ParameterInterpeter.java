@@ -39,6 +39,7 @@ class ParameterInterpeter {
     private static final String TIME_OUT = "timeout";
     private static final String LOG_FILE = "log";
     private static final String CLICK = "click";
+    static final String MODEL = "model";
 
     private final Options options;
     private final CommandLine parameters;
@@ -91,6 +92,11 @@ class ParameterInterpeter {
 
         options.addOption("v", VERBOSE, false, "Be extra verbose");
         options.addOption(LOG_FILE, true, "Log to this file instead of the console");
+        options.addOption(
+                "m",
+                MODEL,
+                true,
+                "path to an inferred model JSON file (GK-Tail) used to guide the crawl");
 
         return options;
     }
@@ -123,7 +129,9 @@ class ParameterInterpeter {
 
     private void checkUrlValidity(String urlValue) {
         String[] schemes = {"http", "https"};
-        if (urlValue == null || !new UrlValidator(schemes).isValid(urlValue)) {
+        // ALLOW_LOCAL_URLS so http://localhost:3001/ and similar local targets are accepted
+        UrlValidator validator = new UrlValidator(schemes, UrlValidator.ALLOW_LOCAL_URLS);
+        if (urlValue == null || !validator.isValid(urlValue)) {
             throw new IllegalArgumentException("provide a valid URL like http://example.com");
         }
     }
@@ -254,5 +262,13 @@ class ParameterInterpeter {
 
     public String getSpecifiedRemoteBrowser() {
         return parameters.getOptionValue(BROWSER_REMOTE_URL);
+    }
+
+    boolean specifiesModel() {
+        return parameters.hasOption(MODEL);
+    }
+
+    String getSpecifiedModel() {
+        return parameters.getOptionValue(MODEL);
     }
 }
