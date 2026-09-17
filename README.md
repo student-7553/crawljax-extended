@@ -35,3 +35,19 @@ Changelog
 ---------
 
 Detailed change history is available in our [changelog](https://github.com/crawljax/crawljax/blob/master/CHANGELOG.md).
+
+Build
+---------
+mvn -pl cli -am -DskipTests -Dspotless.check.skip=true package
+
+
+Model Run
+---------
+unzip -o cli/target/crawljax-cli-5.2.4-SNAPSHOT.zip -d ./tmp
+java -jar ./tmp/crawljax-cli-5.2.4-SNAPSHOT/crawljax-cli-5.2.4-SNAPSHOT.jar \
+  http://localhost:1800/ \
+  ./out \
+  -d 10 \
+  -waitAfterEvent 1000 \
+  -waitAfterReload 1000 \
+  -m ./models/retro-model-1.json -o -v

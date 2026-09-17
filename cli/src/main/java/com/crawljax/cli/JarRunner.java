@@ -8,6 +8,7 @@ import com.crawljax.core.configuration.BrowserConfiguration;
 import com.crawljax.core.configuration.CrawljaxConfiguration;
 import com.crawljax.core.configuration.CrawljaxConfiguration.CrawljaxConfigurationBuilder;
 import com.crawljax.core.model.InferredModel;
+import com.crawljax.interaction.InteractionResultsPlugin;
 import com.crawljax.plugins.crawloverview.CrawlOverview;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Charsets;
@@ -136,6 +137,7 @@ public class JarRunner {
         configureTimers(builder);
 
         builder.addPlugin(new CrawlOverview());
+        builder.addPlugin(new InteractionResultsPlugin());
 
         if (options.specifiesClickElements()) {
             builder.crawlRules().click(options.getSpecifiedClickElements());

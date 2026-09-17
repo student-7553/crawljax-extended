@@ -27,11 +27,11 @@ public class CrawlRules {
     /**
      * Default wait after URL reload in {@link TimeUnit#MILLISECONDS}
      */
-    public static final long DEFAULT_WAIT_AFTER_RELOAD = 200;
+    public static final long DEFAULT_WAIT_AFTER_RELOAD = 1000;
     /**
      * Default wait after event in {@link TimeUnit#MILLISECONDS}
      */
-    public static final long DEFAULT_WAIT_AFTER_EVENT = 200;
+    public static final long DEFAULT_WAIT_AFTER_EVENT = 1000;
 
     private ImmutableSortedSet<EventType> crawlEvents;
     private ImmutableList<Invariant> invariants;
@@ -61,7 +61,8 @@ public class CrawlRules {
     private FragmentRules usefulFragmentRules = new FragmentRules();
     private boolean restoreConnectedEdges = false;
 
-    private CrawlRules() {}
+    private CrawlRules() {
+    }
 
     public static CrawlRulesBuilder builder(CrawljaxConfigurationBuilder builder) {
         return new CrawlRulesBuilder(builder);
@@ -638,8 +639,8 @@ public class CrawlRules {
         private void setupOracleComparatorsOrDefault() {
             ImmutableList<OracleComparator> comparators = oracleComparators.build();
             if (comparators.isEmpty()) {
-                crawlRules.oracleComparators =
-                        ImmutableList.of(new OracleComparator("DummyComparator", new DummyComparator()));
+                crawlRules.oracleComparators = ImmutableList
+                        .of(new OracleComparator("DummyComparator", new DummyComparator()));
 
             } else {
                 crawlRules.oracleComparators = comparators;
